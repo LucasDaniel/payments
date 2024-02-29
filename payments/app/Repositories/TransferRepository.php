@@ -8,10 +8,14 @@ use App\Models\Transfer;
 class TransferRepository
 {
 	
-    public static function findWithState($id): Transfer {
-        return Transfer::find($id)
-                        ->select('transfers.payee','transfers.payer','st.state')
+    public static function find(int $id): Transfer|null {
+        return Transfer::find($id);
+    }
+
+    public static function findWithState($id): object|null {
+        return Transfer::select('transfers.payee','transfers.payer','st.state')
                         ->join('state_transfers as st', 'st.id', '=', 'transfers.id_state')
+                        ->where('transfers.id',$id)
                         ->get()
                         ->first();
     }

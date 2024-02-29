@@ -16,4 +16,15 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    /* *
+     * A basic functional test example.
+     * /
+    public function test_making_an_api_request(): void
+    {
+        $response = $this->postJson('/api/transfer/transfer', ['value' => 100, 'payer' => 2, 'payee' => 3]);
+ 
+        $response->assertStatus(200);
+    }
+    */
 }

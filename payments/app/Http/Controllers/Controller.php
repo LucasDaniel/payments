@@ -13,7 +13,7 @@ class Controller extends BaseController
 
     protected $return;
 
-    protected function exception($msg) {
-        throw new Exception($msg);
+    protected function exception($msg,$code = 500) {
+        throw new Exception($msg,$code);
     }
 }

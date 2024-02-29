@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             UserSeed::class,
             WalletsSeed::class,
             StateTransferSeed::class,
+            TransferSeed::class
         ]);
     }
 }
