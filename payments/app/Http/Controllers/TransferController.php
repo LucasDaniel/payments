@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 class TransferController extends Controller
 {
 
-    public function transfer(Request $request) {
+    public function transfer(Request $request): string {
 
         try {
             
@@ -75,7 +75,7 @@ class TransferController extends Controller
         return $this->return;
     }
 
-    public function returnTransfer(Request $request) {
+    public function returnTransfer(Request $request): string {
         
         try {
 
