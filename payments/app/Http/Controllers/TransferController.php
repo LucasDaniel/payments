@@ -33,17 +33,17 @@ class TransferController extends Controller
             $payee = $request->get('payee');
 
             $user_payer = UserRepository::findUserTypeWallet($payer);
-            if (!$user_payer) $this->exception("Error on get user payer!",502);
+            if (!$user_payer) $this->exception($this->dictionary['error']['getUserPayer']);
 
             $user_payee = UserRepository::find($payee);
-            if (!$user_payee) $this->exception("Error on get user payee!",510);
+            if (!$user_payee) $this->exception($this->dictionary['error']['getUserPayee']);
             
             if ($user_payer->type == EnumTypeUser::COMUM->value) {
 
                 if ($user_payer->value >= $value) {
 
                     $id_transfer = TransferRepository::makeTranfer($request->all());
-                    if (!$id_transfer) $this->exception("Error on get transfer!",503);
+                    if (!$id_transfer) $this->exception($this->dictionary['error']['getTransfer']);
 
                     $response = Http::get(env('MOCK_FINISH_TRANSFER'));
 
@@ -57,16 +57,16 @@ class TransferController extends Controller
                         $response = Http::get(env('MOCK_RECEIVED_PAYMENT'));
 
                         if ($response->successful() && $response->object()->message) $this->return = true;
-                        else $this->exception("Error on send message to payer and payee!",504);
+                        else $this->exception($this->dictionary['error']['sendMessage']);
 
                     } else {
 
                         TransferRepository::setTransferError($id_transfer);
-                        $this->exception("Error on Mocky!",505);
+                        $this->exception($this->dictionary['error']['finishTransfer']);
 
                     }
-                } else $this->exception("Don't have money!",506);
-            } else $this->exception("STORE don't send money to anyone!",507);
+                } else $this->exception($this->dictionary['error']['dontHaveMoney']);
+            } else $this->exception($this->dictionary['error']['storeNoSendMoney']);
 
         } catch(Exception $e) {
             $this->return = $e->getMessage()." - ".$e->getCode();
@@ -88,7 +88,7 @@ class TransferController extends Controller
             $id_transfer = $request->get('id_transfer');
 
             $transfer = TransferRepository::findWithState($id_transfer);
-            if (!$transfer) $this->exception("Error on get transfer to return values!",508);
+            if (!$transfer) $this->exception($this->dictionary['error']['getTransferToReturnValues']);
             
             if ($transfer->state == EnumStateTransfer::FINISHED->value) {
 
@@ -98,7 +98,7 @@ class TransferController extends Controller
 
                 $this->return = true;
 
-            } else $this->exception("Tranfer is not finished to return values!",509);
+            } else $this->exception($this->dictionary['error']['transferNotFinishedToReturnValues']);
 
         } catch(Exception $e) {
             $this->return = $e->getMessage()." - ".$e->getCode();
