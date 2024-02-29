@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Carteira;
 use Illuminate\Http\Request;
 
-class CarteiraController extends Controller
+class UserController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      */
@@ -34,7 +34,7 @@ class CarteiraController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Carteira $carteira)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +42,7 @@ class CarteiraController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Carteira $carteira)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +50,7 @@ class CarteiraController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Carteira $carteira)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +58,7 @@ class CarteiraController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Carteira $carteira)
+    public function destroy(string $id)
     {
         //
     }

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\TipoUsuario;
+use App\Models\Wallet;
 use Illuminate\Http\Request;
 
-class TipoUsuarioController extends Controller
+class WalletController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class TipoUsuarioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(TipoUsuario $tipoUsuario)
+    public function show(Wallet $wallet)
     {
         //
     }
@@ -42,7 +42,7 @@ class TipoUsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(TipoUsuario $tipoUsuario)
+    public function edit(Wallet $wallet)
     {
         //
     }
@@ -50,7 +50,7 @@ class TipoUsuarioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, TipoUsuario $tipoUsuario)
+    public function update(Request $request, Wallet $wallet)
     {
         //
     }
@@ -58,7 +58,7 @@ class TipoUsuarioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(TipoUsuario $tipoUsuario)
+    public function destroy(Wallet $wallet)
     {
         //
     }

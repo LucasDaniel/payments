@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('carteiras', function (Blueprint $table) {
+        Schema::create('wallets', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_usuario');
-            $table->integer('valor');
+            $table->unsignedBigInteger('id_user');
+            $table->integer('value');
             $table->timestamps();
 
-            $table->foreign('id_usuario')->references('id')->on('usuarios');
+            $table->foreign('id_user')->references('id')->on('users');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('carteiras');
+        Schema::dropIfExists('wallets');
     }
 };
