@@ -6,8 +6,6 @@
  - [PHP - v8.1.0](https://www.php.net/downloads.php)
  - [Docker - v24.0.5](https://www.docker.com/)
 
- 
-
 ## Instalação
 
 Instale o composer, verifique se ele esta instalado

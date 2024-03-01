@@ -42,6 +42,10 @@ trait Dictionary {
                 'msg' => 'Error on get user payee!',
                 'code' => 510
             ], 
+            'delete' => [
+                'msg' => 'Error on get User to delete!',
+                'code' => 511
+            ], 
         ]
     ];
 

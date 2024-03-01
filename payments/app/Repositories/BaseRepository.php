@@ -24,4 +24,12 @@ class BaseRepository
     public function find(int $id): Model|null {
         return $this->model::find($id);
     }
+
+    public function create(array $args): Model {
+        return $this->model::create($args);
+    }
+
+    public function delete(int $id) {
+        return $this->model->find($id)->delete();
+    }
 }

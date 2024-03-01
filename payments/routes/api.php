@@ -21,10 +21,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/state_transfer/all',[StateTransferController::class, 'list']);
 Route::get('/state_transfer/{id}',[StateTransferController::class, 'show']);
+Route::delete('/state_transfer/{id}',[StateTransferController::class, 'delete']);
+Route::put('/state_transfer/{id}',[StateTransferController::class, 'update']);
+Route::patch('/state_transfer/{id}',[StateTransferController::class, 'patch']);
+Route::post('/state_transfer',[StateTransferController::class, 'create']);
+
 Route::get('/type_user/all',[TypeUserController::class, 'list']);
 Route::get('/type_user/{id}',[TypeUserController::class, 'show']);
+
 Route::get('/user/all',[UserController::class, 'list']);
 Route::get('/user/{id}',[UserController::class, 'show']);
+
 Route::get('/wallet/all',[WalletController::class, 'list']);
 Route::get('/wallet/{id}',[WalletController::class, 'show']);
 
