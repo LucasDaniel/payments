@@ -95,6 +95,19 @@ Provavelmente vai lhe pedir para criar a base de dados payment
 
 **Obs:** A transferencia precisa esta finalizada para conseguir reverter
 
+## Possiveis problemas
+
+Ao tentar dar php artisan serve, você pode se deparar com alguns problemas
+
+Execute os comandos abaixo para resolve-los
+
+```bash
+    composer update
+```
+e/ou
+```bash
+    composer dump-autoload
+```
 
 ## 🚀 Sobre mim
 [Lucas - Linkedin - Clique aqui!!!](https://www.linkedin.com/in/lucas-dniel-beltrame-de-lima-rodrigues/)
