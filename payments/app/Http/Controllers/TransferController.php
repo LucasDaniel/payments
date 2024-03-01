@@ -105,6 +105,11 @@ class TransferController extends Controller
         return $this->return;
     }
 
+    /**
+     * Return transfer of type is finished
+     * @param Request
+     * @return string
+     */
     public function returnTransfer(Request $request): string {
         
         try {
