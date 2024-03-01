@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class WalletController extends Controller
 {
+    /**
+     * Constructor, set model and repository
+     */    
     public function __construct() {
         $this->model = new Wallet();
         $this->repository = new WalletRepository();

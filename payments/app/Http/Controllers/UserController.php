@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    /**
+     * Constructor, set model and repository
+     */    
     public function __construct() {
         $this->model = new User();
         $this->repository = new UserRepository();

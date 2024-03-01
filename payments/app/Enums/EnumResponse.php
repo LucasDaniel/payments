@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Enums;
- 
+
+/**
+ * Possible external response enums
+ *
+ */
 enum EnumResponse:string {
     case AVAILABLE = 'Available';
     case UNAVAILABLE = 'Unavailable';
