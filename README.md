@@ -69,6 +69,13 @@ Provavelmente vai lhe pedir para criar a base de dados payment
     php artisan migrate
     php artisan db:seed
 ```
+
+Para executar o teste do PHPUnit
+
+```bash
+    php artisan app:test 
+```
+
 ## Documentação da API
 
 #### Retorna todos os itens [GET]
