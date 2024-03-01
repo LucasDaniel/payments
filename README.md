@@ -49,6 +49,13 @@ Adicione essa parte no seu arquivo .env
     DB_PASSWORD=root
 ```
 
+Adicione no final do arquivo .env
+
+```bash
+    MOCK_FINISH_TRANSFER="https://run.mocky.io/v3/5794d450-d2e2-4412-8131-73d0293ac1cc"
+    MOCK_RECEIVED_PAYMENT="https://run.mocky.io/v3/54dc2cf1-3add-45b5-b5a9-6bf7e7f1f4a6"
+```
+
 Abra um outro terminal, entre na pasta payments do laravel e Execute
 
 ```bash
