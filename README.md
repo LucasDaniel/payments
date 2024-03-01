@@ -30,6 +30,25 @@ Execute o codigo para gerar o repositorio
     docker-compose up --build
 ```
 
+Entre na pasta payments e execute o comando
+
+```bash
+    composer update
+```
+
+Aqui deve ter criado um arquivo .env.example
+Renomei-o para .env
+Adicione essa parte no seu arquivo .env
+
+```bash
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=payaments
+    DB_USERNAME=root
+    DB_PASSWORD=root
+```
+
 Abra um outro terminal, entre na pasta payments do laravel e Execute
 
 ```bash
@@ -95,16 +114,13 @@ Provavelmente vai lhe pedir para criar a base de dados payment
 
 **Obs:** A transferencia precisa esta finalizada para conseguir reverter
 
+
 ## Possiveis problemas
 
 Ao tentar dar php artisan serve, você pode se deparar com alguns problemas
 
-Execute os comandos abaixo para resolve-los
+Execute o comandos abaixo para resolve-los
 
-```bash
-    composer update
-```
-e/ou
 ```bash
     composer dump-autoload
 ```
