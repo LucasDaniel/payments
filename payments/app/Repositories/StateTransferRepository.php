@@ -3,11 +3,17 @@
 namespace App\Repositories;
 
 use App\Models\StateTransfer;
+use Illuminate\Database\Eloquent\Model;
 
-class StateTransferRepository
+class StateTransferRepository extends BaseRepository
 {
-    public static function getIdStateTransfer($state): int {
-        return StateTransfer::where('state','LIKE',$state)
+
+    public function __construct() {
+        $this->model = new StateTransfer();
+    }
+
+    public function getIdStateTransfer(string $state): int {
+        return $this->model::where('state','LIKE',$state)
                 ->get()->first()->id;
     }
     

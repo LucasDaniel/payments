@@ -15,43 +15,45 @@ class TransferSeed extends Seeder
      */
     public function run(): void
     {
+        $StateTransferRepository = new StateTransferRepository();
+        
         $t = new Transfer();
-        $t->id_state = StateTransferRepository::getIdStateTransfer(EnumStateTransfer::RETURNED->value);
+        $t->id_state = $StateTransferRepository->getIdStateTransfer(EnumStateTransfer::RETURNED->value);
         $t->payer = 2;
         $t->payee = 3;
         $t->value = 100;
         $t->save();
 
         $t = new Transfer();
-        $t->id_state = StateTransferRepository::getIdStateTransfer(EnumStateTransfer::PENDING->value);
+        $t->id_state = $StateTransferRepository->getIdStateTransfer(EnumStateTransfer::PENDING->value);
         $t->payer = 2;
         $t->payee = 3;
         $t->value = 100;
         $t->save();
 
         $t = new Transfer();
-        $t->id_state = StateTransferRepository::getIdStateTransfer(EnumStateTransfer::ERROR->value);
+        $t->id_state = $StateTransferRepository->getIdStateTransfer(EnumStateTransfer::ERROR->value);
         $t->payer = 2;
         $t->payee = 3;
         $t->value = 100;
         $t->save();
 
         $t = new Transfer();
-        $t->id_state = StateTransferRepository::getIdStateTransfer(EnumStateTransfer::FINISHED->value);
+        $t->id_state = $StateTransferRepository->getIdStateTransfer(EnumStateTransfer::FINISHED->value);
         $t->payer = 2;
         $t->payee = 3;
         $t->value = 100;
         $t->save();
 
         $t = new Transfer();
-        $t->id_state = StateTransferRepository::getIdStateTransfer(EnumStateTransfer::FINISHED->value);
+        $t->id_state = $StateTransferRepository->getIdStateTransfer(EnumStateTransfer::FINISHED->value);
         $t->payer = 2;
         $t->payee = 3;
         $t->value = 100;
         $t->save();
 
         $t = new Transfer();
-        $t->id_state = StateTransferRepository::getIdStateTransfer(EnumStateTransfer::FINISHED->value);
+        $t->id_state = $StateTransferRepository->getIdStateTransfer(EnumStateTransfer::FINISHED->value);
         $t->payer = 2;
         $t->payee = 3;
         $t->value = 100;

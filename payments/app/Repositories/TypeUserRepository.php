@@ -3,12 +3,16 @@
 namespace App\Repositories;
 
 use App\Models\TypeUser;
-use Ramsey\Uuid\Uuid;
 
-class TypeUserRepository
+class TypeUserRepository extends BaseRepository
 {
-    public static function getIdTypeUser($type): int {
-        return TypeUser::where('type','LIKE',$type)
+
+    public function __construct() {
+        $this->model = new TypeUser();
+    }
+
+    public function getIdTypeUser(string $type): int {
+        return $this->model::where('type','LIKE',$type)
                 ->get()->first()->id;
     }
     

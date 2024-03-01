@@ -16,8 +16,10 @@ class UserSeed extends Seeder
      */
     public function run(): void
     {
+        $typeUserRepository = new TypeUserRepository();
+
         $u = new User();
-        $u->id_type = TypeUserRepository::getIdTypeUser(EnumTypeUser::COMUM->value);
+        $u->id_type = $typeUserRepository->getIdTypeUser(EnumTypeUser::COMUM->value);
         $u->name = 'Lucas Daniel Beltrame';
         $u->cpf = '34567898765';
         $u->email = 'lucas@email.com';
@@ -25,7 +27,7 @@ class UserSeed extends Seeder
         $u->save();
 
         $u = new User();
-        $u->id_type = TypeUserRepository::getIdTypeUser(EnumTypeUser::COMUM->value);
+        $u->id_type = $typeUserRepository->getIdTypeUser(EnumTypeUser::COMUM->value);
         $u->name = 'Lima Rodrigues';
         $u->cpf = '98765423456';
         $u->email = 'lima@email.com';
@@ -33,7 +35,7 @@ class UserSeed extends Seeder
         $u->save();
 
         $u = new User();
-        $u->id_type = TypeUserRepository::getIdTypeUser(EnumTypeUser::STORE->value);
+        $u->id_type = $typeUserRepository->getIdTypeUser(EnumTypeUser::STORE->value);
         $u->name = 'Padaria';
         $u->cpf = '45678987654';
         $u->email = 'padaria@email.com';
@@ -41,7 +43,7 @@ class UserSeed extends Seeder
         $u->save();
 
         $u = new User();
-        $u->id_type = TypeUserRepository::getIdTypeUser(EnumTypeUser::STORE->value);
+        $u->id_type = $typeUserRepository->getIdTypeUser(EnumTypeUser::STORE->value);
         $u->name = 'Farmacia';
         $u->cpf = '56789876543';
         $u->email = 'farmacia@email.com';

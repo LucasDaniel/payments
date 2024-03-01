@@ -4,18 +4,16 @@ namespace App\Repositories;
 
 use App\Models\Wallet;
 
-class WalletRepository
+class WalletRepository extends BaseRepository
 {
-	
-    public static function updatePayerValue($payer,$value) {
-		$w = Wallet::find($payer);
-        $w->value -= $value;
-        $w->save();
-	}
 
-	public static function updatePayeeValue($payee,$value) {
-		$w = Wallet::find($payee);
-        $w->value += $value;
+    public function __construct() {
+		$this->model = new Wallet();
+	}
+	
+    public function updateUserValue(int $id_user,int $value): void {
+		$w = $this->model::find($id_user);
+        $w->value = $w->value + $value;
         $w->save();
 	}
     
